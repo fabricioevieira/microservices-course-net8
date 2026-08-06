@@ -8,6 +8,6 @@ public class GetBasketQueryHandler(IBasketRepository repository)
     public async Task<GetBasketResult> Handle(GetBasketQuery query, CancellationToken cancellationToken)
     {
         var basket = await repository.GetBasketAsync(query.UserName, cancellationToken);
-        return new GetBasketResult(new ShoppingCart());
+        return new GetBasketResult(basket);
     }
 }
