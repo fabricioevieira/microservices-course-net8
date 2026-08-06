@@ -11,14 +11,14 @@ public class StoreBasketCommandValidator : AbstractValidator<StoreBasketCommand>
         RuleFor(x => x.ShoppingCart.Items).NotEmpty().WithMessage("Shopping cart items cannot be empty.");
     }
 }
-public class StoreBasketCommandHandler : ICommandHandler<StoreBasketCommand, StoreBasketResult>
+public class StoreBasketCommandHandler(IBasketRepository repository)
+    : ICommandHandler<StoreBasketCommand, StoreBasketResult>
 {
     public async Task<StoreBasketResult> Handle(StoreBasketCommand command, CancellationToken cancellationToken)
     {
         ShoppingCart shoppingCart = command.ShoppingCart;
 
-        //TODO: store the shopping cart in a database
-        //TODO: update cache if needed
+        await repository.StoreBasketAsync(shoppingCart, cancellationToken);
 
         return new(shoppingCart.UserName);
     }
