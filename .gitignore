@@ -416,3 +416,19 @@ FodyWeavers.xsd
 *.msix
 *.msm
 *.msp
+
+# SQLite database files (keep the EF Core migrations, not the generated database)
+*.db
+*.db3
+*.s3db
+*.sl3
+*.sqlite
+*.sqlite3
+
+# SQLite rollback journal, WAL and shared-memory sidecar files
+*-journal
+*-shm
+*-wal
+
+# SQLite databases created without a file extension
+discountdb
