@@ -12,6 +12,12 @@
   <Folder Name="/Services/Discount/">
     <Project Path="Services/Discount/Discount.Grpc/Discount.Grpc.csproj" Id="920cec84-c4f6-44fa-9f5e-5d0303ec7e50" />
   </Folder>
+  <Folder Name="/Services/Ordering/">
+    <Project Path="Services/Ordering/Ordering.API/Ordering.API.csproj" />
+    <Project Path="Services/Ordering/Ordering.Application/Ordering.Application.csproj" />
+    <Project Path="Services/Ordering/Ordering.Domain/Ordering.Domain.csproj" />
+    <Project Path="Services/Ordering/Ordering.Infrastructure/Ordering.Infrastructure.csproj" />
+  </Folder>
   <Project Path="docker-compose.dcproj">
     <Build />
   </Project>
